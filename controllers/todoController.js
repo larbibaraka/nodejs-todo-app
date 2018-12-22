@@ -7,7 +7,7 @@ var data = [
 //require mongoose
 var mongoose = require('mongoose');
 //connect
-mongoose.connect('mongodb://larbi:larbi2016@ds141674.mlab.com:41674/todos');
+mongoose.connect('mongodb://yourname:password@ds141674.mlab.com:41674/todos');
 //create a schema
 var todoSchema = new mongoose.Schema({
   item : String
@@ -27,8 +27,7 @@ module.exports = function (app) {
           if(err) throw err;
              res.render('todo', {todo : data})
         })
-     
-  })
+      })
 
   app.post('/todo' , urlEncodedParser, function(req, res){
       console.log(req.body)
