@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="">
   <head>
@@ -21,7 +20,6 @@
     <![endif]-->
   </head>
   <body>
-    
     <nav class="navbar navbar-default">
       <a class="navbar-brand" href="#">Node Todo App</a>
       <ul class="nav navbar-nav">
@@ -36,11 +34,49 @@
         </li>
       </ul>
     </nav>
+
     
-   
+    
+    <div class="container">
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <form>
+                    <div class="form-group">
+                      <label class="sr-only" for="">Task</label>
+                      <input type="text" class="form-control" id="" name="task" placeholder="Task text" style="display: inline ; width : 90%">
+                      <button type="submit" class="btn btn-success" style="display: inline">Add</button>
+                    </div>         
+                    
+                  </form>
+            </div>
+          </div>
+          
+          <div class="panel panel-success">
+              <div class="panel-heading">
+                <h3 class="panel-title">items task</h3>
+              </div>
+              <div class="panel-body">
+                <ul class="list-group">
+                  <% for(var i=0; i<todo.length; i++){%>
+                  <li class="list-group-item "><%= todo[i].item %> 
+                  <button type="button" class="btn btn-success">done</button>
+                  <button type="button" class="btn btn-danger"> delete</button>
+                  </li>
+                 <% } %>
+                </ul>
+              </div>
+          </div>
+          
+    </div>
+       
     <!-- jQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <!-- Bootstrap JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <script src="/assets/posthandler.js"></script>
+
+
+
   </body>
 </html>
