@@ -3,11 +3,11 @@ $(document).ready(function () {
 
   $('form').on('submit', function () {
     var item = $('form input');
-    var todo =  {item :"hello baraka"};
+    var todo =  {item : item.val()};
 
     console.log(todo , item)
 
-    /*$.ajax({
+    $.ajax({
       type : 'POST',
       url : '/todo',
       data : todo,
@@ -15,7 +15,7 @@ $(document).ready(function () {
         location.reload();
       }
       
-    })*/
+    })
 
   })
 
